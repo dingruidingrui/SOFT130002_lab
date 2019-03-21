@@ -27,7 +27,7 @@
         您的居住地<br>
         <select name="area" value="上海" required>
             <option value="asia">北京</option>
-            <option value="europe">上海</option>
+            <option value="europe" selected>上海</option>
             <option value="africa">广东</option>
             <option value="north-america">江苏</option>
             <option value="south-america">浙江</option>
@@ -37,8 +37,22 @@
     </p>
     <p>
         您的电话号码<br>
-        <input type="tel" name="tel1" required>
+        <input type="tel"  name="tel1" required>
     </p>
+     <script >
+            function checkPhone(){
+                var _phone = document.getElementById('phone').value;
+
+                if(!(/^1[0-9]{10}$/.test(_phone))){
+                    alert("手机号码有误，请重填");
+                    return false;
+                }
+                else{
+                    return true;
+                }
+            }
+
+        </script>
     <p>
         您的常用设备<br>
         <input type="checkbox" name="credit" value="credit">PC
